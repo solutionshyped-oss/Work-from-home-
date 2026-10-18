@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0876bb">
+
+  <title>Work From Home - Handwriting Project</title>
+  <meta name="description" content="Learn about our work from home handwriting project. Flexible timing and project-based work.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #0877bd;
+      --blue-light: #0796e5;
+      --green: #17b34b;
+      --dark-green: #087b45;
+      --text: #3f4a52;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff24 2px, transparent 4px),
+        radial-gradient(circle at 80% 70%, #ffffff20 2px, transparent 4px),
+        linear-gradient(155deg, #0874b5 0%, #086ca8 43%, #04b34c 100%);
+      background-size: 40px 55px, 58px 65px, auto;
+      color: var(--text);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      width: 100%;
+      padding: 28px 23px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 45px rgba(0, 49, 79, 0.20);
+      text-align: center;
+    }
+
+    .telegram-btn {
+      width: 100%;
+      min-height: 61px;
+      padding: 15px 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: 0.15px;
+      border-radius: 50px;
+      background: linear-gradient(105deg, #0878bd, #0a91df);
+      box-shadow: 0 12px 24px rgba(0, 124, 194, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .telegram-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 28px rgba(0, 124, 194, 0.32);
+    }
+
+    .telegram-btn:active {
+      transform: scale(0.98);
+    }
+
+    .telegram-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand {
+      padding: 24px 0 20px;
+    }
+
+    .logo {
+      width: 136px;
+      height: 136px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      background: linear-gradient(145deg, #ffffff, #e8f4fa);
+      box-shadow: 0 8px 24px rgba(39, 77, 94, 0.18);
+    }
+
+    .logo-placeholder {
+      padding: 8px;
+      color: #173b55;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
+      line-height: 1.1;
+    }
+
+    .logo-placeholder span {
+      display: block;
+      margin-top: 8px;
+      color: #0879bd;
+      font-size: 13px;
+      font-weight: normal;
+    }
+
+    .brand h1 {
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: clamp(25px, 6vw, 30px);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+    }
+
+    .subtitle {
+      color: #73838d;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      padding: 4px 0 22px;
+      text-align: left;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .check {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dcefe3;
+      border-radius: 50%;
+      background: #eaf8ef;
+      color: #20b75b;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .feature p {
+      flex: 1;
+      text-align: center;
+      font-size: 14.5px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .offer {
+      margin-bottom: 22px;
+      padding: 14px 8px;
+      border: 1px solid #dfebf3;
+      border-radius: 15px;
+      background: #eff7fc;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .offer .limited {
+      color: #176ca9;
+    }
+
+    .offer .apply {
+      color: var(--dark-green);
+    }
+
+    .note {
+      margin: 22px 4px 17px;
+      color: #7a898f;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .note strong {
+      color: var(--dark-green);
+    }
+
+    .credit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 11px 16px;
+      border: 1px solid #e3e9ec;
+      border-radius: 30px;
+      background: #f5f8f9;
+      color: #77848b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .credit strong {
+      color: #37434a;
+    }
+
+    @media (max-width: 380px) {
+      body {
+        padding: 18px 11px;
+      }
+
+      .card {
+        padding: 20px 15px;
+      }
+
+      .telegram-btn {
+        min-height: 56px;
+        font-size: 13px;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .feature p {
+        font-size: 13px;
+      }
+
+      .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .telegram-btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+
+      <!-- Top Telegram button -->
+      <a
+        class="telegram-btn"
+        href="https://t.me/+r8OqWwDFskQwMjhl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join our Telegram channel"
+      >
+        <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 2 11 13"></path>
+          <path d="m22 2-7 20-4-9-9-4Z"></path>
+        </svg>
+        <span>Join Telegram Channel</span>
+      </a>
+
+      <!-- Logo and heading -->
+      <header class="brand">
+        <div class="logo">
+          <!-- Replace this placeholder with your logo image if available -->
+          <div class="logo-placeholder">
+            Work from Home
+            <span>Hand Writing</span>
+          </div>
+        </div>
+
+        <h1>Work From Home</h1>
+        <p class="subtitle">HANDWRITING PROJECT</p>
+      </header>
+
+      <!-- Project features -->
+      <div class="features">
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <p>Simple Writing Work – No Experience Needed</p>
+        </div>
+
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <p>Earn ₹15,000 – ₹30,000 Per Month</p>
+        </div>
+
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <p>Work From Home • Flexible Timing</p>
+        </div>
+      </div>
+
+      <!-- Call to action -->
+      <div class="offer">
+        <div class="limited">Limited Seats Available</div>
+        <div class="apply">Apply Today!</div>
+      </div>
+
+      <!-- Bottom Telegram button -->
+      <a
+        class="telegram-btn"
+        href="https://t.me/+r8OqWwDFskQwMjhl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apply through our Telegram channel"
+      >
+        <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 2 11 13"></path>
+          <path d="m22 2-7 20-4-9-9-4Z"></path>
+        </svg>
+        <span>Join Telegram Channel</span>
+      </a>
+
+      <!-- Disclaimer -->
+      <p class="note">
+        <strong>Note:</strong> This is project-based work.
+        Earnings depend on performance and submission quality.
+      </p>
+
+      <footer class="credit">
+        <span>⚑</span>
+        <span>Ads managed by</span>
+        <strong>HYPED SOLUTIONS</strong>
+      </footer>
+
+    </section>
+  </main>
+</body>
+</html>
